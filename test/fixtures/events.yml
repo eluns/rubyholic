@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: Week5_homework
+  description: To_do_homework
+  start: 2009-02-28 13:30:54
+  end: 2009-02-28 13:30:54
+  group: one
+  location: one
+
+two:
+  name: Week6_homework
+  description: To_do_homework
+  start: 2009-02-28 13:30:54
+  end: 2009-02-28 13:30:54
+  group: two
+  location: two

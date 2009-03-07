@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: Seattle
+  latitude: 90.1232
+  longitude: 130.12397
+
+two:
+  name: SanDiego
+  latitude: 45.23408
+  longitude: 140.4230
