@@ -23,7 +23,7 @@ class EventTest < ActiveSupport::TestCase
     event.end_time = '2009-02-28 12:30:54'
     assert ! event.valid?
     assert event.errors.on(:end_time)
-    assert event.errors.on(:star_time)
+    assert event.errors.on(:start_time)
   end
   
 end

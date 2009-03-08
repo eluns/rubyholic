@@ -15451,3 +15451,445 @@ Processing LocationsController#show (for 0.0.0.0 at 2009-03-07 21:47:48) [GET]
 Rendering template within layouts/locations
 Rendering locations/show
 Completed in 2ms (View: 1, DB: 1) | 200 OK [http://test.host/locations/187663]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+  [4;35;1mGroup Load (0.4ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+  [4;36;1mGroup Load (0.4ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;35;1mGroup Exists (0.2ms)[0m   [0mSELECT "groups".id FROM "groups" WHERE ("groups"."name" = 'Seattle.RB') LIMIT 1[0m
+  [4;36;1mGroup Exists (0.1ms)[0m   [0;1mSELECT "groups".id FROM "groups" WHERE ("groups"."name" IS NULL) LIMIT 1[0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;36;1mLocation Exists (0.1ms)[0m   [0;1mSELECT "locations".id FROM "locations" WHERE ("locations"."name" = 'Seattle' AND "locations".id <> 187663) LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;36;1mLocation Exists (0.1ms)[0m   [0;1mSELECT "locations".id FROM "locations" WHERE ("locations"."name" = 'Seattle' AND "locations".id <> 187663) LIMIT 1[0m
+  [4;35;1mLocation Exists (0.1ms)[0m   [0mSELECT "locations".id FROM "locations" WHERE ("locations"."name" IS NULL) LIMIT 1[0m
+  [4;36;1mLocation Exists (0.1ms)[0m   [0;1mSELECT "locations".id FROM "locations" WHERE ("locations"."name" IS NULL) LIMIT 1[0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;36;1mLocation Exists (0.1ms)[0m   [0;1mSELECT "locations".id FROM "locations" WHERE ("locations"."name" IS NULL AND "locations".id <> 187663) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" [0m
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+
+
+Processing EventsController#destroy (for 0.0.0.0 at 2009-03-08 16:25:27) [DELETE]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+  [4;35;1mEvent Destroy (0.2ms)[0m   [0mDELETE FROM "events" WHERE "id" = 187663[0m
+Redirected to http://test.host/events
+Completed in 3ms (DB: 3) | 302 Found [http://test.host/events/187663]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" [0m
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+
+
+Processing EventsController#edit (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 22ms (View: 21, DB: 1) | 200 OK [http://test.host/events/187663/edit]
+
+
+Processing EventsController#index (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/events]
+
+
+Processing EventsController#new (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://test.host/events/new]
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+
+
+Processing EventsController#show (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 2ms (View: 1, DB: 1) | 200 OK [http://test.host/events/187663]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+
+
+Processing EventsController#update (for 0.0.0.0 at 2009-03-08 16:25:27) [PUT]
+  Parameters: {"event"=>{}, "id"=>"187663"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+Redirected to #<Event:0x2187f84>
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/events/187663?]
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  Parameters: {"order_by"=>"name"}
+  [4;36;1mGroup Load (1.3ms)[0m   [0;1mSELECT * FROM "groups" ORDER BY name LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://test.host/groups?order_by=name]
+  [4;36;1mGroup Load (1.3ms)[0m   [0;1mSELECT * FROM "groups" ORDER BY name LIMIT 10[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  [4;36;1mGroup Load (0.8ms)[0m   [0;1mSELECT * FROM "groups" LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 8ms (View: 6, DB: 2) | 200 OK [http://test.host/groups]
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  Parameters: {"order_by"=>"name", "direction"=>"desc"}
+  [4;36;1mGroup Load (1.3ms)[0m   [0;1mSELECT * FROM "groups" ORDER BY name desc LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 61ms (View: 58, DB: 1) | 200 OK [http://test.host/groups?direction=desc&order_by=name]
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  Parameters: {"order_by"=>"name"}
+  [4;36;1mGroup Load (1.3ms)[0m   [0;1mSELECT * FROM "groups" ORDER BY name LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://test.host/groups?order_by=name]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "groups" [0m
+
+
+Processing GroupsController#create (for 0.0.0.0 at 2009-03-08 16:25:27) [POST]
+  Parameters: {"group"=>{"name"=>"new group"}}
+  [4;35;1mGroup Exists (0.1ms)[0m   [0mSELECT "groups".id FROM "groups" WHERE ("groups"."name" = 'new group') LIMIT 1[0m
+  [4;36;1mGroup Create (0.3ms)[0m   [0;1mINSERT INTO "groups" ("name", "updated_at", "created_at") VALUES('new group', '2009-03-08 23:25:27', '2009-03-08 23:25:27')[0m
+Redirected to #<Group:0x24200c0>
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/groups?group%5Bname%5D=new+group]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "groups" [0m
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+
+
+Processing GroupsController#destroy (for 0.0.0.0 at 2009-03-08 16:25:27) [DELETE]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;35;1mGroup Destroy (0.4ms)[0m   [0mDELETE FROM "groups" WHERE "id" = 187663[0m
+Redirected to http://test.host/groups
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/groups/187663]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "groups" [0m
+  [4;35;1mGroup Load (0.4ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+
+
+Processing GroupsController#edit (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+Rendering template within layouts/groups
+Rendering groups/edit
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://test.host/groups/187663/edit]
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  [4;35;1mGroup Load (1.3ms)[0m   [0mSELECT * FROM "groups" LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 12ms (View: 9, DB: 2) | 200 OK [http://test.host/groups]
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  Parameters: {"sort"=>"name"}
+  [4;35;1mGroup Load (1.3ms)[0m   [0mSELECT * FROM "groups" LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 12ms (View: 9, DB: 2) | 200 OK [http://test.host/groups?sort=name]
+
+
+Processing GroupsController#new (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+Rendering template within layouts/groups
+Rendering groups/new
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://test.host/groups/new]
+  [4;35;1mGroup Load (0.4ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+
+
+Processing GroupsController#show (for 0.0.0.0 at 2009-03-08 16:25:27) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mGroup Load (0.2ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+Rendering template within layouts/groups
+Rendering groups/show
+Completed in 2ms (View: 1, DB: 1) | 200 OK [http://test.host/groups/187663]
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+
+
+Processing GroupsController#update (for 0.0.0.0 at 2009-03-08 16:25:27) [PUT]
+  Parameters: {"id"=>"187663", "group"=>{}}
+  [4;36;1mGroup Load (0.2ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;35;1mGroup Exists (0.1ms)[0m   [0mSELECT "groups".id FROM "groups" WHERE ("groups"."name" = 'Seattle.RB' AND "groups".id <> 187663) LIMIT 1[0m
+Redirected to #<Group:0x236eadc>
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/groups/187663?]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "locations" [0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+
+
+Processing LocationsController#destroy (for 0.0.0.0 at 2009-03-08 16:25:28) [DELETE]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;35;1mLocation Destroy (0.3ms)[0m   [0mDELETE FROM "locations" WHERE "id" = 187663[0m
+Redirected to http://test.host/locations
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/locations/187663]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "locations" [0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+
+
+Processing LocationsController#edit (for 0.0.0.0 at 2009-03-08 16:25:28) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+Rendering template within layouts/locations
+Rendering locations/edit
+Completed in 4ms (View: 3, DB: 1) | 200 OK [http://test.host/locations/187663/edit]
+
+
+Processing LocationsController#index (for 0.0.0.0 at 2009-03-08 16:25:28) [GET]
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/locations
+Rendering locations/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/locations]
+
+
+Processing LocationsController#new (for 0.0.0.0 at 2009-03-08 16:25:28) [GET]
+Rendering template within layouts/locations
+Rendering locations/new
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://test.host/locations/new]
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+
+
+Processing LocationsController#show (for 0.0.0.0 at 2009-03-08 16:25:28) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+Rendering template within layouts/locations
+Rendering locations/show
+Completed in 2ms (View: 1, DB: 1) | 200 OK [http://test.host/locations/187663]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+  [4;36;1mGroup Load (0.2ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;35;1mGroup Load (0.2ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;36;1mGroup Load (0.2ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;35;1mGroup Exists (0.2ms)[0m   [0mSELECT "groups".id FROM "groups" WHERE ("groups"."name" = 'Seattle.RB') LIMIT 1[0m
+  [4;36;1mGroup Exists (0.1ms)[0m   [0;1mSELECT "groups".id FROM "groups" WHERE ("groups"."name" IS NULL) LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;36;1mLocation Exists (0.1ms)[0m   [0;1mSELECT "locations".id FROM "locations" WHERE ("locations"."name" = 'Seattle' AND "locations".id <> 187663) LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;36;1mLocation Exists (0.1ms)[0m   [0;1mSELECT "locations".id FROM "locations" WHERE ("locations"."name" = 'Seattle' AND "locations".id <> 187663) LIMIT 1[0m
+  [4;35;1mLocation Exists (0.2ms)[0m   [0mSELECT "locations".id FROM "locations" WHERE ("locations"."name" IS NULL) LIMIT 1[0m
+  [4;36;1mLocation Exists (0.1ms)[0m   [0;1mSELECT "locations".id FROM "locations" WHERE ("locations"."name" IS NULL) LIMIT 1[0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;36;1mLocation Exists (0.1ms)[0m   [0;1mSELECT "locations".id FROM "locations" WHERE ("locations"."name" IS NULL AND "locations".id <> 187663) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" [0m
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+
+
+Processing EventsController#destroy (for 0.0.0.0 at 2009-03-08 16:26:49) [DELETE]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+  [4;35;1mEvent Destroy (0.3ms)[0m   [0mDELETE FROM "events" WHERE "id" = 187663[0m
+Redirected to http://test.host/events
+Completed in 4ms (DB: 4) | 302 Found [http://test.host/events/187663]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" [0m
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+
+
+Processing EventsController#edit (for 0.0.0.0 at 2009-03-08 16:26:49) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 22ms (View: 21, DB: 1) | 200 OK [http://test.host/events/187663/edit]
+
+
+Processing EventsController#index (for 0.0.0.0 at 2009-03-08 16:26:49) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/events]
+
+
+Processing EventsController#new (for 0.0.0.0 at 2009-03-08 16:26:49) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://test.host/events/new]
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+
+
+Processing EventsController#show (for 0.0.0.0 at 2009-03-08 16:26:49) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 2ms (View: 1, DB: 1) | 200 OK [http://test.host/events/187663]
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+
+
+Processing EventsController#update (for 0.0.0.0 at 2009-03-08 16:26:49) [PUT]
+  Parameters: {"event"=>{}, "id"=>"187663"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 187663) [0m
+Redirected to #<Event:0x2187f84>
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/events/187663?]
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:26:49) [GET]
+  Parameters: {"order_by"=>"name"}
+  [4;36;1mGroup Load (1.3ms)[0m   [0;1mSELECT * FROM "groups" ORDER BY name LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://test.host/groups?order_by=name]
+  [4;36;1mGroup Load (1.4ms)[0m   [0;1mSELECT * FROM "groups" ORDER BY name LIMIT 10[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:26:49) [GET]
+  [4;36;1mGroup Load (0.9ms)[0m   [0;1mSELECT * FROM "groups" LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 8ms (View: 6, DB: 3) | 200 OK [http://test.host/groups]
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:26:49) [GET]
+  Parameters: {"order_by"=>"name", "direction"=>"desc"}
+  [4;36;1mGroup Load (1.3ms)[0m   [0;1mSELECT * FROM "groups" ORDER BY name desc LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 62ms (View: 59, DB: 1) | 200 OK [http://test.host/groups?direction=desc&order_by=name]
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:26:50) [GET]
+  Parameters: {"order_by"=>"name"}
+  [4;36;1mGroup Load (1.4ms)[0m   [0;1mSELECT * FROM "groups" ORDER BY name LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://test.host/groups?order_by=name]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "groups" [0m
+
+
+Processing GroupsController#create (for 0.0.0.0 at 2009-03-08 16:26:50) [POST]
+  Parameters: {"group"=>{"name"=>"new group"}}
+  [4;35;1mGroup Exists (0.1ms)[0m   [0mSELECT "groups".id FROM "groups" WHERE ("groups"."name" = 'new group') LIMIT 1[0m
+  [4;36;1mGroup Create (0.3ms)[0m   [0;1mINSERT INTO "groups" ("name", "updated_at", "created_at") VALUES('new group', '2009-03-08 23:26:50', '2009-03-08 23:26:50')[0m
+Redirected to #<Group:0x24200c0>
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/groups?group%5Bname%5D=new+group]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "groups" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "groups" [0m
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+
+
+Processing GroupsController#destroy (for 0.0.0.0 at 2009-03-08 16:26:50) [DELETE]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;35;1mGroup Destroy (0.3ms)[0m   [0mDELETE FROM "groups" WHERE "id" = 187663[0m
+Redirected to http://test.host/groups
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/groups/187663]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "groups" [0m
+  [4;35;1mGroup Load (0.4ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+
+
+Processing GroupsController#edit (for 0.0.0.0 at 2009-03-08 16:26:50) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+Rendering template within layouts/groups
+Rendering groups/edit
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://test.host/groups/187663/edit]
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:26:50) [GET]
+  [4;35;1mGroup Load (1.2ms)[0m   [0mSELECT * FROM "groups" LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://test.host/groups]
+
+
+Processing GroupsController#index (for 0.0.0.0 at 2009-03-08 16:26:50) [GET]
+  Parameters: {"sort"=>"name"}
+  [4;35;1mGroup Load (0.9ms)[0m   [0mSELECT * FROM "groups" LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "groups" [0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://test.host/groups?sort=name]
+
+
+Processing GroupsController#new (for 0.0.0.0 at 2009-03-08 16:26:50) [GET]
+Rendering template within layouts/groups
+Rendering groups/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/groups/new]
+  [4;35;1mGroup Load (0.3ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+
+
+Processing GroupsController#show (for 0.0.0.0 at 2009-03-08 16:26:50) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mGroup Load (0.2ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+Rendering template within layouts/groups
+Rendering groups/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/groups/187663]
+  [4;35;1mGroup Load (0.2ms)[0m   [0mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+
+
+Processing GroupsController#update (for 0.0.0.0 at 2009-03-08 16:26:50) [PUT]
+  Parameters: {"id"=>"187663", "group"=>{}}
+  [4;36;1mGroup Load (0.2ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 187663) [0m
+  [4;35;1mGroup Exists (0.1ms)[0m   [0mSELECT "groups".id FROM "groups" WHERE ("groups"."name" = 'Seattle.RB' AND "groups".id <> 187663) LIMIT 1[0m
+Redirected to #<Group:0x236eadc>
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/groups/187663?]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "locations" [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+
+
+Processing LocationsController#destroy (for 0.0.0.0 at 2009-03-08 16:26:50) [DELETE]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+  [4;35;1mLocation Destroy (0.3ms)[0m   [0mDELETE FROM "locations" WHERE "id" = 187663[0m
+Redirected to http://test.host/locations
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/locations/187663]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "locations" [0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+
+
+Processing LocationsController#edit (for 0.0.0.0 at 2009-03-08 16:26:50) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+Rendering template within layouts/locations
+Rendering locations/edit
+Completed in 4ms (View: 3, DB: 1) | 200 OK [http://test.host/locations/187663/edit]
+
+
+Processing LocationsController#index (for 0.0.0.0 at 2009-03-08 16:26:50) [GET]
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/locations
+Rendering locations/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/locations]
+
+
+Processing LocationsController#new (for 0.0.0.0 at 2009-03-08 16:26:50) [GET]
+Rendering template within layouts/locations
+Rendering locations/new
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://test.host/locations/new]
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+
+
+Processing LocationsController#show (for 0.0.0.0 at 2009-03-08 16:26:50) [GET]
+  Parameters: {"id"=>"187663"}
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 187663) [0m
+Rendering template within layouts/locations
+Rendering locations/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/locations/187663]

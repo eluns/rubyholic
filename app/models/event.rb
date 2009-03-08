@@ -7,8 +7,8 @@ class Event < ActiveRecord::Base
   validates_presence_of :start_time
   
   def validate
-    self.errors.add(:start, "must be before the end date") if self.start_time > self.end_time
-    self.errors.add(:end, "must be after the start date") if self.end_time < self.start_time
+    self.errors.add(:start_time, "must be before the end date") if self.start_time > self.end_time
+    self.errors.add(:end_time, "must be after the start date") if self.end_time < self.start_time
   end
 
 
