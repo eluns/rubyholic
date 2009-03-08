@@ -1,22 +1,22 @@
-one:
+seattle:
   name: Seattle.RB
-two:
-  name: SanDiego.RB
-three:
+chicago:
   name: Chicago.RB
-four:
+sandiego:
+  name: SanDiego.RB
+portland:
   name: Portland.RB
-five:
+gigharbor:
   name: GigHarbor.RB
-six:
+tacoma:
   name: Tacoma.RB
-seven:
+houston:
   name: Houston.RB
-eight:
+losangles:
   name: LosAngles.RB
-nine:
+sealbeach:
   name: SealBeach.RB
-ten:
+oceanbeach:
   name: OceanBeach.RB
-eleven:
+dolton:
   name: Dolton.RB

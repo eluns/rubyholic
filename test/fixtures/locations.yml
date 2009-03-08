@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+seattle:
   name: Seattle
   latitude: 90.1232
   longitude: 130.12397
 
-two:
-  name: SanDiego
+chicago:
+  name: Chicago
   latitude: 45.23408
   longitude: 140.4230

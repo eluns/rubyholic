@@ -10,17 +10,17 @@ class GroupTest < ActiveSupport::TestCase
  
   test "name must be unique" do
     group = Group.new
-    group.name = groups(:one).name
+    group.name = groups(:seattle).name
     assert ! group.valid?
     assert group.errors.on(:name)
   end
   
   test "has many locations" do
-    assert groups(:one).locations, "should have location association"
+    assert groups(:seattle).locations, "should have location association"
   end
   
   test "has many events" do
-  	assert groups(:one).events, "should have events"
+  	assert groups(:seattle).events, "should have events"
   end
   
 end

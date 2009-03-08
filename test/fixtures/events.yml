@@ -1,17 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+seattle:
   name: Week5_homework
   description: To_do_homework
   start: 2009-02-28 13:30:54
   end: 2009-02-28 13:30:54
-  group: one
-  location: one
+  group: seattle
+  location: seattle
 
-two:
+chicago:
   name: Week6_homework
   description: To_do_homework
   start: 2009-02-28 13:30:54
   end: 2009-02-28 13:30:54
-  group: two
-  location: two
+  group: chicago
+  location: chicago

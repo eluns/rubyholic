@@ -2,7 +2,7 @@ require 'test_helper'
 
 class LocationTest < ActiveSupport::TestCase
  test "validates presence of name" do
-    location = locations(:one)
+    location = locations(:seattle)
     location.name = nil
     assert ! location.valid?
     assert location.errors.on(:name)
@@ -23,25 +23,25 @@ class LocationTest < ActiveSupport::TestCase
   end
   
   test "that latitude must be a number" do
-    location = locations(:one)
+    location = locations(:seattle)
     location.latitude = 'String'
     assert ! location.valid?
     assert location.errors.on(:latitude)
   end
   
   test "that longitude must be a number" do
-    location = locations(:one)
+    location = locations(:seattle)
     location.longitude = 'String'
     assert ! location.valid?
     assert location.errors.on(:longitude)
   end  
   
    test "has many groups" do
-    assert locations(:one).groups, "should have groups association"
+    assert locations(:seattle).groups, "should have groups association"
   end
   
   test "has many events" do
-  	assert locations(:one).events, "should have events"
+  	assert locations(:seattle).events, "should have events"
   end
 
  

@@ -12185,3 +12185,703 @@ Completed in 12ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/groups?direction=ASC
   [4;36;1mSQL (2.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
   [4;35;1mSQL (2.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
   [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "groups_locations" ("group_id" integer, "location_id" integer) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+
+
+Processing GroupsController#index (for 127.0.0.1 at 2009-03-07 19:11:23) [GET]
+  [4;36;1mGroup Load (2.5ms)[0m   [0;1mSELECT * FROM "groups" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 57ms (View: 32, DB: 3) | 200 OK [http://0.0.0.0/groups]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2009-03-07 19:12:38) [GET]
+  [4;35;1mLocation Load (0.6ms)[0m   [0mSELECT * FROM "locations" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/locations
+Rendering locations/index
+Completed in 34ms (View: 21, DB: 1) | 200 OK [http://0.0.0.0/locations]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2009-03-07 19:13:04) [GET]
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/locations
+Rendering locations/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/locations]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-03-07 19:13:18) [GET]
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 48ms (View: 24, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-03-07 19:13:36) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 152ms (View: 144, DB: 0) | 200 OK [http://0.0.0.0/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2009-03-07 19:14:16) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"e5ed927829572aab9dc5b67400c2c6b99db4d810", "event"=>{"end(4i)"=>"03", "name"=>"Homework Week 7", "end(5i)"=>"13", "start(1i)"=>"2009", "start(2i)"=>"3", "start(3i)"=>"8", "description"=>"Rubyholix", "start(4i)"=>"03", "end(1i)"=>"2009", "start(5i)"=>"13", "end(2i)"=>"3", "end(3i)"=>"8"}}
+  [4;36;1mEvent Create (0.5ms)[0m   [0;1mINSERT INTO "events" ("name", "updated_at", "end", "location_id", "group_id", "description", "start", "created_at") VALUES('Homework Week 7', '2009-03-08 03:14:16', '2009-03-08 03:13:00', NULL, NULL, 'Rubyholix', '2009-03-08 03:13:00', '2009-03-08 03:14:16')[0m
+Redirected to #<Event:0x22d8208>
+Completed in 14ms (DB: 0) | 302 Found [http://0.0.0.0/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-03-07 19:14:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://0.0.0.0/events/1]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-03-07 19:14:45) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing GroupsController#index (for 127.0.0.1 at 2009-03-07 19:16:50) [GET]
+  [4;35;1mGroup Load (0.7ms)[0m   [0mSELECT * FROM "groups" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/groups
+Rendering groups/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://0.0.0.0/groups]
+
+
+Processing GroupsController#show (for 127.0.0.1 at 2009-03-07 19:18:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mGroup Load (0.2ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."id" = 1) [0m
+Rendering template within layouts/groups
+Rendering groups/show
+Completed in 23ms (View: 17, DB: 0) | 200 OK [http://0.0.0.0/groups/1]
+  [4;36;1mSQL (17.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (12.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "groups_locations" ("group_id" integer, "location_id" integer) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-03-07 19:26:12) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://0.0.0.0/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2009-03-07 19:26:18) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"e5ed927829572aab9dc5b67400c2c6b99db4d810", "event"=>{"end(4i)"=>"04", "name"=>"", "end(5i)"=>"26", "start(1i)"=>"2009", "start(2i)"=>"3", "start(3i)"=>"8", "description"=>"", "start(4i)"=>"03", "end(1i)"=>"2009", "start(5i)"=>"26", "end(2i)"=>"3", "end(3i)"=>"8"}}
+Rendering template within layouts/events
+Rendering events/new
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2009-03-07 19:26:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"e5ed927829572aab9dc5b67400c2c6b99db4d810", "event"=>{"end(4i)"=>"04", "name"=>"Homework Test", "end(5i)"=>"26", "start(1i)"=>"2009", "start(2i)"=>"3", "start(3i)"=>"8", "description"=>"start end", "start(4i)"=>"03", "end(1i)"=>"2009", "start(5i)"=>"26", "end(2i)"=>"3", "end(3i)"=>"8"}}
+  [4;35;1mEvent Create (0.6ms)[0m   [0mINSERT INTO "events" ("name", "updated_at", "end", "location_id", "group_id", "description", "start", "created_at") VALUES('Homework Test', '2009-03-08 03:26:39', '2009-03-08 04:26:00', NULL, NULL, 'start end', '2009-03-08 03:26:00', '2009-03-08 03:26:39')[0m
+Redirected to #<Event:0x22e14c0>
+Completed in 15ms (DB: 1) | 302 Found [http://0.0.0.0/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-03-07 19:26:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/events/2]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2009-03-07 19:26:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/events/2/edit]
+
+
+Processing EventsController#update (for 127.0.0.1 at 2009-03-07 19:26:49) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"e5ed927829572aab9dc5b67400c2c6b99db4d810", "event"=>{"end(4i)"=>"02", "name"=>"Homework Test", "end(5i)"=>"26", "start(1i)"=>"2009", "start(2i)"=>"3", "start(3i)"=>"8", "description"=>"start end", "start(4i)"=>"03", "end(1i)"=>"2009", "start(5i)"=>"26", "end(2i)"=>"3", "end(3i)"=>"8"}, "id"=>"2"}
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 23ms (View: 13, DB: 0) | 200 OK [http://0.0.0.0/events/2]
+  [4;36;1mSQL (26.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCREATE TABLE "groups_locations" ("group_id" integer, "location_id" integer) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "groups_locations" ("group_id" integer, "location_id" integer) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (348.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "groups_locations" ("group_id" integer, "location_id" integer) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "groups_locations" ("group_id" integer, "location_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (22.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (15.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (24.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.3ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (31.4ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m
+  [4;36;1mSQL (16.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime, "location_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090304033917')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090219033231')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090219033245')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228213054')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228213254')[0m

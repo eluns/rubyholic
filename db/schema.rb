@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(:version => 20090304033917) do
     t.datetime "updated_at"
   end
 
-  create_table "groups_locations", :id => false, :force => true do |t|
-    t.integer "group_id"
-    t.integer "location_id"
-  end
+#  create_table "groups_locations", :id => false, :force => true do |t|
+#    t.integer "group_id"
+#    t.integer "location_id"
+#  end
 
   create_table "locations", :force => true do |t|
     t.string   "name"

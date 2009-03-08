@@ -47,23 +47,23 @@ class GroupsControllerTest < ActionController::TestCase
   end
  
   test "should show group" do
-    get :show, :id => groups(:one).id
+    get :show, :id => groups(:seattle).id
     assert_response :success
   end
  
   test "should get edit" do
-    get :edit, :id => groups(:one).id
+    get :edit, :id => groups(:seattle).id
     assert_response :success
   end
  
   test "should update group" do
-    put :update, :id => groups(:one).id, :group => { }
+    put :update, :id => groups(:seattle).id, :group => { }
     assert_redirected_to group_path(assigns(:group))
   end
  
   test "should destroy group" do
     assert_difference('Group.count', -1) do
-      delete :destroy, :id => groups(:one).id
+      delete :destroy, :id => groups(:seattle).id
     end
  
     assert_redirected_to groups_path
