@@ -18,12 +18,12 @@ class EventTest < ActiveSupport::TestCase
   end
   
   test "validates end time is after start time" do
-    event = events(:chicago)
-    event.start = '2009-02-28 13:30:54'
-    event.end =  '2009-02-28 12:30:54;
+    event = events(:seattle)
+    event.start_time = '2009-02-28 13:30:54'
+    event.end_time = '2009-02-28 12:30:54'
     assert ! event.valid?
-    assert event.errors.on(:end)
-    assert event.errors.on(:start)
+    assert event.errors.on(:end_time)
+    assert event.errors.on(:star_time)
   end
   
 end

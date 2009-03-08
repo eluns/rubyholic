@@ -3,15 +3,15 @@
 seattle:
   name: Week5_homework
   description: To_do_homework
-  start: 2009-02-28 13:30:54
-  end: 2009-02-28 13:30:54
+  start_time: 2009-02-28 13:30:54
+  end_time: 2009-02-28 13:30:54
   group: seattle
   location: seattle
 
 chicago:
   name: Week6_homework
   description: To_do_homework
-  start: 2009-02-28 13:30:54
-  end: 2009-02-28 13:30:54
+  start_time: 2009-02-28 13:30:54
+  end_time: 2009-02-28 13:30:54
   group: chicago
   location: chicago
